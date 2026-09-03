@@ -2,9 +2,6 @@ import { useActionState } from "react";
 
 import { isEmail, isNotEmpty, isEqualToOtherValue, hasMinLength } from "../util/validation";
 
-
-export default function Signup() {
-
   function signupAction(prevFormState, formData) {
     const email = formData.get('email');
     const password = formData.get('password');
@@ -55,11 +52,15 @@ export default function Signup() {
         role,
         acquisitionChannel,
         terms
-      }};
+      },
+    };
     }
     return {errors: null}
 
   }
+export default function Signup() {
+
+
 
   const [formState, formAction] = useActionState(signupAction, {errors: null});
 
